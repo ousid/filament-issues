@@ -1,8 +1,8 @@
 ## Filament Issues
-This is a demonstration project, to track issues, created by @ousid
+This is a demonstration project, to track issues on filament package, created by @ousid
 
 ## Seeding the DB
-Some issues, relies on a data, you may run 
+Some issues, relies on data, you may run the db seeder 
 
 ```bash
 php artisan db:seed
