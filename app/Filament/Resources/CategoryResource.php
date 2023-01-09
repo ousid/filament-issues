@@ -4,6 +4,7 @@ namespace App\Filament\Resources;
 
 use App\Filament\Resources\CategoryResource\Pages;
 use App\Filament\Resources\CategoryResource\RelationManagers;
+use App\Filament\Resources\CategoryResource\RelationManagers\TypesRelationManager;
 use App\Models\Category;
 use Filament\Forms;
 use Filament\Forms\Components\TextInput;
@@ -24,7 +25,11 @@ class CategoryResource extends Resource
     {
         return $form
             ->schema([
-                TextInput::make('name'),
+                Forms\Components\TextInput::make('name'),
+
+                Forms\Components\Select::make('types')
+                    ->multiple()
+                    ->relationship('types', 'label'),
             ]);
     }
 
@@ -48,7 +53,7 @@ class CategoryResource extends Resource
     public static function getRelations(): array
     {
         return [
-            //
+            TypesRelationManager::class,
         ];
     }
     
