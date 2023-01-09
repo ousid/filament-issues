@@ -10,6 +10,8 @@ class Type extends Model
 {
     use HasFactory;
 
+    protected $guarded = [];
+
     public function categories(): BelongsToMany
     {
         return $this->belongsToMany(Category::class);
